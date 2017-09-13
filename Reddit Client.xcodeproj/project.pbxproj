@@ -13,6 +13,9 @@
 		13C422671F68B664005A781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13C422661F68B664005A781F /* Assets.xcassets */; };
 		13C4226A1F68B664005A781F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13C422681F68B664005A781F /* LaunchScreen.storyboard */; };
 		13C422751F68B664005A781F /* Reddit_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422741F68B664005A781F /* Reddit_ClientTests.swift */; };
+		13C422811F68DDE8005A781F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422801F68DDE8005A781F /* Post.swift */; };
+		13C422841F68E09F005A781F /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422831F68E09F005A781F /* DataServices.swift */; };
+		13C422871F68E1E8005A781F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422861F68E1E8005A781F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		13C422701F68B664005A781F /* Reddit ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reddit ClientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13C422741F68B664005A781F /* Reddit_ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit_ClientTests.swift; sourceTree = "<group>"; };
 		13C422761F68B664005A781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13C422801F68DDE8005A781F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		13C422831F68E09F005A781F /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		13C422861F68E1E8005A781F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 		13C4225E1F68B664005A781F /* Reddit Client */ = {
 			isa = PBXGroup;
 			children = (
+				13C422851F68E184005A781F /* Utilities */,
+				13C422821F68E078005A781F /* DataServices */,
+				13C4227F1F68DDBC005A781F /* Model */,
 				13C4225F1F68B664005A781F /* AppDelegate.swift */,
 				13C422611F68B664005A781F /* ViewController.swift */,
 				13C422631F68B664005A781F /* Main.storyboard */,
@@ -94,6 +103,30 @@
 				13C422761F68B664005A781F /* Info.plist */,
 			);
 			path = "Reddit ClientTests";
+			sourceTree = "<group>";
+		};
+		13C4227F1F68DDBC005A781F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13C422801F68DDE8005A781F /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13C422821F68E078005A781F /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				13C422831F68E09F005A781F /* DataServices.swift */,
+			);
+			path = DataServices;
+			sourceTree = "<group>";
+		};
+		13C422851F68E184005A781F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				13C422861F68E1E8005A781F /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +232,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C422871F68E1E8005A781F /* Constants.swift in Sources */,
+				13C422811F68DDE8005A781F /* Post.swift in Sources */,
 				13C422621F68B664005A781F /* ViewController.swift in Sources */,
 				13C422601F68B664005A781F /* AppDelegate.swift in Sources */,
+				13C422841F68E09F005A781F /* DataServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

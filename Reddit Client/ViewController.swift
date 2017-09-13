@@ -9,17 +9,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //MARK: IBOutlets
+    
+    @IBOutlet weak var postsTableView: UITableView!
+    
+    var posts: [Post] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        postsTableView.delegate = self
+        postsTableView.dataSource = self
+        
+        DataServices.callAPI({ (posts) in
+            print("the Posts are")
+            
+            self.posts = posts
+            DispatchQueue.main.async {
+                self.postsTableView.reloadData()
+            }
+        }) { (errorMessage) in print(errorMessage)}
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("I was selected")
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
 
