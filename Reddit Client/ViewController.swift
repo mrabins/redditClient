@@ -11,10 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: IBOutlets
-    
     @IBOutlet weak var postsTableView: UITableView!
     
+    
+    // MARK: Global Variablea
     var posts: [Post] = []
+    var postsTableViewCell = PostsTableViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,19 +35,30 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("I was selected")
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+    }
 }
 
+// MARK: UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 20
+        //return posts.count exchange above line for this when ready
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        postsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostsTableViewCell
+        
+        return postsTableViewCell
+        
     }
 }
 
