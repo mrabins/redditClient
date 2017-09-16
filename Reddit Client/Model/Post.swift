@@ -16,10 +16,17 @@ struct Post {
     var thumbnameImage: String?
     var sumofComments: Int?
     
-    init(title: String, author: String, postDate: String, thumbnameImage: String, sumOfComments: Int) {
+        init?(jsonDict: [String: AnyObject]) {
+        guard let thumbnameImage = jsonDict["thumbnail"] as? String,
+            let title = jsonDict["title"] as? String,
+            let author = jsonDict["author"] as? String,
+            let sumofComments = jsonDict["num_comments"] as? Int else {
+                return nil
+        }
+        
+        self.thumbnameImage = thumbnameImage
         self.title = title
         self.author = author
-        self.postDate = postDate
-        self.sumofComments = sumOfComments
+        self.sumofComments = sumofComments
     }
 }
