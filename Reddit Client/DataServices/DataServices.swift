@@ -27,9 +27,9 @@ class DataServices {
                             
                             // Parse the Json
                             let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
-                       
+                            print("jsonDict \(String(describing: jsonDictionary))")
                            
-                            var result: [Post] = []
+                            let result: [Post] = []
 
                             success(result)
                         } else {

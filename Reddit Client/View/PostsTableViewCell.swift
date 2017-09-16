@@ -9,8 +9,12 @@
 import UIKit
 
 class PostsTableViewCell: UITableViewCell {
-
-
     
-
+    // MARK: IBOutlets
+    @IBOutlet weak var postTitleLabel: UILabel!
+    @IBOutlet weak var postAuthorLabel: UILabel!
+    @IBOutlet weak var numberOfCommentsLabel: UILabel!
+    @IBOutlet weak var createdAtLabel: UILabel!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    
 }
