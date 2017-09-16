@@ -26,18 +26,11 @@ class DataServices {
                         if NSString(data:data, encoding: String.Encoding.utf8.rawValue) != nil {
                             
                             // Parse the Json
-                            let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-                            
-                            guard let posts = jsonDictionary["posts"] as? NSArray else {
-                                
-                                return }
-                            
+                            let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+                       
+                           
                             var result: [Post] = []
-                            
-                            for post in posts {
-                                // Parse response here
-                                
-                            }
+
                             success(result)
                         } else {
                             errorCallback("No Valid Information")
