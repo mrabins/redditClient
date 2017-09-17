@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     //MARK: IBOutlets
     @IBOutlet weak var postsTableView: UITableView!
     
-    
     // MARK: Global Variablea
     var posts: [Post] = []
     var postsTableViewCell = PostsTableViewCell()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +25,15 @@ class ViewController: UIViewController {
         postsTableView.dataSource = self
         
         DataServices.callAPI({ (posts) in
-            print("the Posts are")
-            
             self.posts = posts
             DispatchQueue.main.async {
                 self.postsTableView.reloadData()
             }
-        }) { (errorMessage) in print(errorMessage)}
+            
+        }) { (errorMessage) in
+            print("An error occured \(errorMessage.debugDescription)")
+        }
     }
-    
-    
 }
 
 
@@ -53,17 +52,20 @@ extension ViewController: UITableViewDelegate {
 // MARK: UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-        //return posts.count exchange above line for this when ready
+        print("I am the posts count \(posts.count)")
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        postsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostsTableViewCell
-        
-        return postsTableViewCell
-        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostsTableViewCell {
+            let post = posts[indexPath.row]
+            cell.postTitleLabel.text = post.title
+            cell.postAuthorLabel.text = post.author
+            cell.numberOfCommentsLabel.text = "\(String(describing: post.sumofComments))"
+            print("I am a cell my title is \(cell.postAuthorLabel.text) and my sumOf comments are \(cell.numberOfCommentsLabel.text)")
+        }
+        return PostsTableViewCell()
     }
+    
 }
-
-

@@ -101,11 +101,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="createdAtLabel" destination="fY8-4k-6KX" id="dOL-8k-flE"/>
-                                            <outlet property="numberOfCommentsLabel" destination="bVZ-Jh-pgP" id="HMM-rS-Nca"/>
-                                            <outlet property="postAuthorLabel" destination="uoB-uV-Z3Z" id="Pdh-z1-QVN"/>
-                                            <outlet property="postTitleLabel" destination="crb-k7-CEf" id="rpd-tJ-U5A"/>
-                                            <outlet property="thumbnailImageView" destination="zQn-eo-h4P" id="2nM-mf-t5t"/>
+                                            <outlet property="createdAtLabel" destination="fY8-4k-6KX" id="kTQ-bG-6HM"/>
+                                            <outlet property="numberOfCommentsLabel" destination="bVZ-Jh-pgP" id="0Xl-Jt-9wc"/>
+                                            <outlet property="postAuthorLabel" destination="uoB-uV-Z3Z" id="Wm6-zd-F0J"/>
+                                            <outlet property="postTitleLabel" destination="crb-k7-CEf" id="faA-8f-jR2"/>
+                                            <outlet property="thumbnailImageView" destination="zQn-eo-h4P" id="jbp-vJ-NRG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

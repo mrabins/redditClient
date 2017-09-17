@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		132CAFDF1F6B56B7007A670D /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132CAFDE1F6B56B7007A670D /* PostsTableViewCell.swift */; };
+		130B13551F6DF0330089348E /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B13541F6DF0330089348E /* PostsTableViewCell.swift */; };
 		13C422601F68B664005A781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4225F1F68B664005A781F /* AppDelegate.swift */; };
 		13C422621F68B664005A781F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422611F68B664005A781F /* ViewController.swift */; };
 		13C422651F68B664005A781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13C422631F68B664005A781F /* Main.storyboard */; };
@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		132CAFDE1F6B56B7007A670D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		130B13541F6DF0330089348E /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		13C4225C1F68B664005A781F /* Reddit Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13C4225F1F68B664005A781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13C422611F68B664005A781F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		132CAFDD1F6B5687007A670D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				132CAFDE1F6B56B7007A670D /* PostsTableViewCell.swift */,
+				130B13541F6DF0330089348E /* PostsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 				13C422871F68E1E8005A781F /* Constants.swift in Sources */,
 				13C422811F68DDE8005A781F /* Post.swift in Sources */,
 				13C422621F68B664005A781F /* ViewController.swift in Sources */,
-				132CAFDF1F6B56B7007A670D /* PostsTableViewCell.swift in Sources */,
+				130B13551F6DF0330089348E /* PostsTableViewCell.swift in Sources */,
 				13C422601F68B664005A781F /* AppDelegate.swift in Sources */,
 				13C422841F68E09F005A781F /* DataServices.swift in Sources */,
 			);

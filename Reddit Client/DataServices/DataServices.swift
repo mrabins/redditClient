@@ -9,7 +9,7 @@
 import Foundation
 
 class DataServices {
-        
+    
     class func callAPI(_ success: @escaping (_ posts: [Post]) -> (), error errorCallback: @escaping (_ errorMessage: String) -> ()) {
         
         let getEndpoint = BASE_URL + REQUEST_CATEGORY + TYPE_OF_DATA
@@ -17,10 +17,10 @@ class DataServices {
         let url = URL(string: getEndpoint)!
         var posts = [Post]()
         
-                let task = session.dataTask(with: url) { (data, response, error) in
-                    guard let data = data else {
-                        return
-                    }
+        let task = session.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
             
             do {
                 let object = try JSONSerialization.jsonObject(with: data, options: [])
@@ -33,17 +33,16 @@ class DataServices {
                 
                 for child in children {
                     if let childData = child["data"] as? [String: AnyObject] {
-                        print("I am the child data \(childData)")
                         let post = Post(jsonDict: childData)
                         if let post = post {
-                            print("I am the posts \(post)")
+                            print("I am a post \(post)")
                             posts.append(post)
                         }
                     }
                 }
                 
             } catch {
-                print("Oh noes! JSON Error!")
+                print("JSON Error!\(error.localizedDescription)")
             }
         }
         
