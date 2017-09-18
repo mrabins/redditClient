@@ -24,16 +24,16 @@ class ViewController: UIViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         
-        DataServices.callAPI({ (posts) in
+        DataServices.callAPI({ posts in
             self.posts = posts
+            
             DispatchQueue.main.async {
                 self.postsTableView.reloadData()
             }
-            
         }) { (errorMessage) in
-            print("An error occured \(errorMessage.debugDescription)")
-        }
+            print("An error occured \(errorMessage.debugDescription)")}
     }
+    
 }
 
 
@@ -52,7 +52,6 @@ extension ViewController: UITableViewDelegate {
 // MARK: UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("I am the posts count \(posts.count)")
         return posts.count
     }
     
@@ -62,8 +61,7 @@ extension ViewController: UITableViewDataSource {
             let post = posts[indexPath.row]
             cell.postTitleLabel.text = post.title
             cell.postAuthorLabel.text = post.author
-            cell.numberOfCommentsLabel.text = "\(String(describing: post.sumofComments))"
-            print("I am a cell my title is \(cell.postAuthorLabel.text) and my sumOf comments are \(cell.numberOfCommentsLabel.text)")
+            cell.numberOfCommentsLabel.text = "\(String(describing: post.sumofComments!))"
         }
         return PostsTableViewCell()
     }
