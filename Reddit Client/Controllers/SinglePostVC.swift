@@ -18,7 +18,6 @@ class SinglePostVC: UIViewController {
     @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    
     var post: Post!
     var myViewController = ViewController()
     
@@ -30,26 +29,17 @@ class SinglePostVC: UIViewController {
         authorLabel.text = "Author: " + post.author!
         commentLabel.text = "Comments: \(String(describing: post.sumofComments!))"
         let date = Date(timeIntervalSince1970: Double(post.postDate!))
-        let dateString = date
-        postDateLabel.text = "Posted Time: " + myViewController.timeAgoSinceDate(dateString)
-        
-        
-        /*
-         
-         cell.postAuthorLabel.text = "Author: " + post.author!
-         cell.numberOfCommentsLabel.text = "Comments: \(String(describing: post.sumofComments!))"
-         cell.thumbnailImageView.imageFromServerURL(urlString: post.thumbnameImage!, defaultImage: "NoImage")
-         
-         let date = Date(timeIntervalSince1970: Double(post.postDate!))
-         let dateString = date
-         cell.createdAtLabel.text = "Posted Time: " + timeAgoSinceDate(dateString)
-         
-         */
-        
+        postDateLabel.text = "Posted Time: " + myViewController.timeAgoSinceDate(date)
     }
 
     @IBAction func saveImage(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(postImage.image!, nil, nil, nil)
+        let addPhotoAlert = UIAlertController(title: "Add Photo", message: "By Hitting Ok You Will Add This Thumbnail To Your Camera Roll. Select Cancel If You Do Not Want To Add This Photo To Your Camera Roll", preferredStyle: .alert)
+        addPhotoAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            UIImageWriteToSavedPhotosAlbum(self.postImage.image!, nil, nil, nil)
+
+        }))
+        addPhotoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(addPhotoAlert, animated: true, completion: nil)
     }
     
 }

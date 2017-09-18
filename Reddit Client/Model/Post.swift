@@ -16,8 +16,8 @@ struct Post {
     var thumbnameImage: String?
     var sumofComments: Int?
     
-        init?(jsonDict: [String: AnyObject]) {
-        guard let thumbnameImage = jsonDict["url"] as? String,
+    init?(jsonDict: [String: AnyObject]) {
+        guard let thumbnameImage = jsonDict["thumbnail"] as? String,
             let title = jsonDict["title"] as? String,
             let author = jsonDict["author"] as? String,
             let sumofComments = jsonDict["num_comments"] as? Int,

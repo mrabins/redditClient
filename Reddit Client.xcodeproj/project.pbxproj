@@ -16,7 +16,6 @@
 		13C422751F68B664005A781F /* Reddit_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422741F68B664005A781F /* Reddit_ClientTests.swift */; };
 		13C422811F68DDE8005A781F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422801F68DDE8005A781F /* Post.swift */; };
 		13C422841F68E09F005A781F /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422831F68E09F005A781F /* DataServices.swift */; };
-		13C422871F68E1E8005A781F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422861F68E1E8005A781F /* Constants.swift */; };
 		13F731791F6F4D1A00ED568A /* ImageView+APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F731781F6F4D1A00ED568A /* ImageView+APIRequest.swift */; };
 		13F7317C1F6F511700ED568A /* SinglePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7317B1F6F511700ED568A /* SinglePostVC.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		13C422761F68B664005A781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13C422801F68DDE8005A781F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		13C422831F68E09F005A781F /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
-		13C422861F68E1E8005A781F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		13F731781F6F4D1A00ED568A /* ImageView+APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+APIRequest.swift"; sourceTree = "<group>"; };
 		13F7317B1F6F511700ED568A /* SinglePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,7 +137,6 @@
 		13C422851F68E184005A781F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				13C422861F68E1E8005A781F /* Constants.swift */,
 				13C4225F1F68B664005A781F /* AppDelegate.swift */,
 			);
 			path = Utilities;
@@ -257,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13C422871F68E1E8005A781F /* Constants.swift in Sources */,
 				13C422811F68DDE8005A781F /* Post.swift in Sources */,
 				13C422621F68B664005A781F /* ViewController.swift in Sources */,
 				130B13551F6DF0330089348E /* PostsTableViewCell.swift in Sources */,

@@ -11,7 +11,7 @@ import Foundation
 class DataServices {
     class func callAPI(_ success: @escaping (_ posts: [Post]) -> (), error errorCallback: @escaping (_ errorMessage: String) -> ()) {
         
-        let getEndpoint = BASE_URL + REQUEST_CATEGORY + TYPE_OF_DATA
+        let getEndpoint = "https://www.reddit.com/top.json?count=50"
         let session = URLSession.shared
         let url = URL(string: getEndpoint)!
         let request = URLRequest(url: url)
@@ -35,7 +35,6 @@ class DataServices {
                                 if let childData = child["data"] as? [String: AnyObject] {
                                     let post = Post(jsonDict: childData)
                                     if let post = post {
-                                        print("where's the time \(post)")
                                         result.append(post)
                                     }
                                 }

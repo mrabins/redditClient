@@ -34,14 +34,6 @@ class ViewController: UIViewController {
             print("An error occured \(errorMessage.debugDescription)")}
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SinglePostSegue" {
-            let vc = segue.destination as! SinglePostVC
-            let post = sender as! Post
-            vc.post = post
-        }
-    }
-    
     func timeAgoSinceDate(_ date: Date) -> String {
         let calendar = NSCalendar.current
         let unitFlags: Set<Calendar.Component> = [.minute, .hour, .day, .weekOfYear, .month, .year, .second]
@@ -53,33 +45,40 @@ class ViewController: UIViewController {
         if (components.year! >= 2) {
             return "\(components.year!) years ago"
         } else if (components.year! >= 1){
-                return "Last year"
+            return "Last year"
         } else if (components.month! >= 2) {
             return "\(components.month!) months ago"
         } else if (components.month! >= 1){
-                return "Last month"
+            return "Last month"
         } else if (components.weekOfYear! >= 2) {
             return "\(components.weekOfYear!) weeks ago"
         } else if (components.weekOfYear! >= 1){
-                return "Last week"
+            return "Last week"
         } else if (components.day! >= 2) {
             return "\(components.day!) days ago"
         } else if (components.day! >= 1){
-                return "Yesterday"
+            return "Yesterday"
         } else if (components.hour! >= 2) {
             return "\(components.hour!) hours ago"
         } else if (components.hour! >= 1){
-                return "An hour ago"
+            return "An hour ago"
         } else if (components.minute! >= 2) {
             return "\(components.minute!) minutes ago"
         } else if (components.minute! >= 1){
-                return "A minute ago"
+            return "A minute ago"
         } else if (components.second! >= 3) {
             return "\(components.second!) seconds ago"
         } else {
             return "Just now"
         }
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SinglePostSegue" {
+            let vc = segue.destination as! SinglePostVC
+            let post = sender as! Post
+            vc.post = post
+        }
     }
 }
 
@@ -91,7 +90,6 @@ extension ViewController: UITableViewDelegate {
         thePost = posts[(indexPath?.row)!]
         
         performSegue(withIdentifier: "SinglePostSegue", sender: thePost)
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -115,8 +113,7 @@ extension ViewController: UITableViewDataSource {
             cell.thumbnailImageView.imageFromServerURL(urlString: post.thumbnameImage!, defaultImage: "NoImage")
             
             let date = Date(timeIntervalSince1970: Double(post.postDate!))
-            let dateString = date
-            cell.createdAtLabel.text = "Posted Time: " + timeAgoSinceDate(dateString)
+            cell.createdAtLabel.text = "Posted Time: " + timeAgoSinceDate(date)
             
         }
         return PostsTableViewCell()
