@@ -17,6 +17,8 @@
 		13C422811F68DDE8005A781F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422801F68DDE8005A781F /* Post.swift */; };
 		13C422841F68E09F005A781F /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422831F68E09F005A781F /* DataServices.swift */; };
 		13C422871F68E1E8005A781F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C422861F68E1E8005A781F /* Constants.swift */; };
+		13F731791F6F4D1A00ED568A /* ImageView+APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F731781F6F4D1A00ED568A /* ImageView+APIRequest.swift */; };
+		13F7317C1F6F511700ED568A /* SinglePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7317B1F6F511700ED568A /* SinglePostVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		13C422801F68DDE8005A781F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		13C422831F68E09F005A781F /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		13C422861F68E1E8005A781F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		13F731781F6F4D1A00ED568A /* ImageView+APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+APIRequest.swift"; sourceTree = "<group>"; };
+		13F7317B1F6F511700ED568A /* SinglePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				130B13541F6DF0330089348E /* PostsTableViewCell.swift */,
+				13C422631F68B664005A781F /* Main.storyboard */,
+				13C422681F68B664005A781F /* LaunchScreen.storyboard */,
+				13C422661F68B664005A781F /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,11 +104,7 @@
 				13C422821F68E078005A781F /* DataServices */,
 				13C4227F1F68DDBC005A781F /* Model */,
 				132CAFDD1F6B5687007A670D /* View */,
-				13C4225F1F68B664005A781F /* AppDelegate.swift */,
-				13C422611F68B664005A781F /* ViewController.swift */,
-				13C422631F68B664005A781F /* Main.storyboard */,
-				13C422661F68B664005A781F /* Assets.xcassets */,
-				13C422681F68B664005A781F /* LaunchScreen.storyboard */,
+				13F7317A1F6F50C700ED568A /* Controllers */,
 				13C4226B1F68B664005A781F /* Info.plist */,
 			);
 			path = "Reddit Client";
@@ -128,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				13C422831F68E09F005A781F /* DataServices.swift */,
+				13F731781F6F4D1A00ED568A /* ImageView+APIRequest.swift */,
 			);
 			path = DataServices;
 			sourceTree = "<group>";
@@ -136,8 +140,18 @@
 			isa = PBXGroup;
 			children = (
 				13C422861F68E1E8005A781F /* Constants.swift */,
+				13C4225F1F68B664005A781F /* AppDelegate.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		13F7317A1F6F50C700ED568A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13C422611F68B664005A781F /* ViewController.swift */,
+				13F7317B1F6F511700ED568A /* SinglePostVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +262,8 @@
 				13C422621F68B664005A781F /* ViewController.swift in Sources */,
 				130B13551F6DF0330089348E /* PostsTableViewCell.swift in Sources */,
 				13C422601F68B664005A781F /* AppDelegate.swift in Sources */,
+				13F731791F6F4D1A00ED568A /* ImageView+APIRequest.swift in Sources */,
+				13F7317C1F6F511700ED568A /* SinglePostVC.swift in Sources */,
 				13C422841F68E09F005A781F /* DataServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "self.Reddit-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -423,7 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "self.Reddit-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

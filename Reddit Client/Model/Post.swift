@@ -12,7 +12,7 @@ struct Post {
     
     var title: String?
     var author: String?
-    var postDate: String?
+    var postDate: Int?
     var thumbnameImage: String?
     var sumofComments: Int?
     
@@ -20,7 +20,8 @@ struct Post {
         guard let thumbnameImage = jsonDict["thumbnail"] as? String,
             let title = jsonDict["title"] as? String,
             let author = jsonDict["author"] as? String,
-            let sumofComments = jsonDict["num_comments"] as? Int else {
+            let sumofComments = jsonDict["num_comments"] as? Int,
+            let postDate = jsonDict["created_utc"] as? Int  else {
                 return nil
         }
         
@@ -28,5 +29,6 @@ struct Post {
         self.title = title
         self.author = author
         self.sumofComments = sumofComments
+        self.postDate = postDate
     }
 }
