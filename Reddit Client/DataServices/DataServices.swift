@@ -33,7 +33,6 @@ class DataServices {
                             
                             for child in children {
                                 if let childData = child["data"] as? [String: AnyObject] {
-                                    print("i am the child \(childData)")
                                     let post = Post(jsonDict: childData)
                                     if let post = post {
                                         print("where's the time \(post)")
